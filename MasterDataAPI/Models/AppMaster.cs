@@ -22,8 +22,6 @@ namespace MasterDataAPI.Models
 
         public DateTime CreatedOn { get; set; } = DateTime.UtcNow;
 
-        // Navigation
-        public LOBMaster LineOfBusiness { get; set; }
-        public ICollection<AppEnvironment> Environments { get; set; }
+       
     }
 }

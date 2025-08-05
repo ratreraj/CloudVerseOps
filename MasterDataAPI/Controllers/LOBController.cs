@@ -1,7 +1,9 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using MasterDataAPI.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace MasterDataAPI.Controllers
 {
@@ -20,5 +22,19 @@ namespace MasterDataAPI.Controllers
             var data = await _dBContext.lOBMaster.ToListAsync();
             return Ok(data);
         }
+
+        [HttpPost]
+        public async Task<IActionResult> AddLob([FromBody] LOBMaster lOBMaster)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
+            var data = await _dBContext.lOBMaster.AddAsync(lOBMaster);
+            return Ok(data);
+
+        }
+
+
     }
 }

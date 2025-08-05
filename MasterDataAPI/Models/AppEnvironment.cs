@@ -17,13 +17,13 @@ namespace MasterDataAPI.Models
         [MaxLength(100)]
         public string ResourceGroup { get; set; } // Optional resource mapping
 
-        [ForeignKey("Application")]
+        
         public int AppId { get; set; }
 
         public DateTime CreatedOn { get; set; } = DateTime.UtcNow;
 
         // Navigation
-        public AppMaster? Application { get; set; }
+       
     }
 
 }

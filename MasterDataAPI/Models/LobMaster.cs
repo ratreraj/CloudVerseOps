@@ -19,7 +19,6 @@ namespace MasterDataAPI.Models
 
         public DateTime CreatedOn { get; set; } = DateTime.UtcNow;
 
-        // Navigation
-        public ICollection<AppMaster> Applications { get; set; }
+       
     }
 }
