@@ -30,8 +30,9 @@ namespace MasterDataAPI.Controllers
             {
                 return BadRequest();
             }
-            var data = await _dBContext.lOBMaster.AddAsync(lOBMaster);
-            return Ok(data);
+            await _dBContext.lOBMaster.AddAsync(lOBMaster);
+            await _dBContext.SaveChangesAsync();
+            return Ok(lOBMaster);
 
         }
 

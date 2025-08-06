@@ -7,6 +7,7 @@ namespace MasterDataAPI.Models
     public class AppEnvironment
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int EnvironmentId { get; set; }
 
         [Required]

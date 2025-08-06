@@ -6,6 +6,7 @@ namespace MasterDataAPI.Models
     public class AppMaster
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int AppId { get; set; }
 
         [Required]
@@ -16,9 +17,13 @@ namespace MasterDataAPI.Models
         [MaxLength(200)]
         public string AppName { get; set; }
 
+        public string LOBCode { get; set; }
+             
+        public string Owner { get; set; }
 
         [MaxLength(300)]
         public string Description { get; set; }
+        
 
         public DateTime CreatedOn { get; set; } = DateTime.UtcNow;
 
