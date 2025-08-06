@@ -27,7 +27,7 @@ namespace MasterDataAPI.Controllers
         public async Task<IActionResult> AddLob([FromBody] LOBMaster lOBMaster)
         {
             if (!ModelState.IsValid)
-            {
+            {    
                 return BadRequest();
             }
             await _dBContext.lOBMaster.AddAsync(lOBMaster);
